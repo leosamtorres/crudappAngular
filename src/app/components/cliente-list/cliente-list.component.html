@@ -1,0 +1,38 @@
+<section class="section animated fadeIn">
+  
+  <div class="buttons">
+    <button routerLink="/usuario" class="button is-primary is-small"><strong>Cadastrar Novo Usuário</strong></button>
+  </div>
+
+  <table class="table is-fullwidth animated slideInUp">
+    <thead>
+      <tr>
+        <th><abbr title="Position">CPF</abbr></th>
+        <th>Nome</th> 
+        <th>Email</th> 
+        <th>Telefone</th> 
+        <th>Sexo</th> 
+        <th>Nascimento</th> 
+        <th>#</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.cpf }}</td>
+        <td>{{ usuario.nome }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.telefone }}</td>
+        <td>{{ usuario.idSexo == 1 ? 'Masculino' : 'Feminino' }}</td>
+        <td>{{ usuario.dataNascimento }}</td>
+        <td>
+          <div class="buttons">
+            <button (click)="update(usuario)" class="button is-warning is-small">Edit</button>
+            <button (click)="delete(usuario)" OnClick="javascript:return Confirma();" class="button is-danger is-small">Del</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+

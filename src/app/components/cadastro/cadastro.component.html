@@ -1,0 +1,69 @@
+<section class="section animated fadeIn">
+  <div class="container">
+    <h2 class="subtitle">
+      Novo Usuário
+    </h2>
+  </div>
+  <hr />
+  <br>
+
+  <div class="columns">
+    <div class="column is-half">
+      <form [formGroup]="form">
+        <div class="control">
+          <input class="input" id="cpf" type="text" placeholder="Cpf" formControlName="cpf" maxlength="11" number>
+          <span class="tag is-danger" *ngIf="!form.controls.cpf.valid && !form.controls.cpf.pristine">CPF
+            inválido</span>
+        </div>
+        <br>
+        <div class="control">
+          <input class="input" type="text" placeholder="Usuário" formControlName="nome">
+          <span class="tag is-danger" *ngIf="!form.controls.nome.valid && !form.controls.nome.pristine">Nome
+            inválido</span>
+        </div>
+        <br>
+        <div class="control">
+          <input class="input" type="text" placeholder="Email" formControlName="email" email>
+          <span class="tag is-danger" *ngIf="!form.controls.email.valid && !form.controls.email.pristine">Email
+            inválido</span>
+        </div>
+        <br>
+        <div class="control">
+          <input class="input" type="text" placeholder="DDD + Telefone" formControlName="telefone" number
+            maxlength="11">
+          <span class="tag is-danger" *ngIf="!form.controls.telefone.valid && !form.controls.telefone.pristine">Telefone
+            inválido</span>
+        </div>
+        <br>
+
+        <div class="control">
+          <label for="sexo" >Selecione o Gênero*</label>
+          <ul class="list-group">
+                <li class="list-group-item"  *ngFor="let item of sexoList">
+                  <label>
+                  <input type="radio" [checked]="item.selected" formControlName="sexo" value="{{item.value}}"/> 
+                  {{item.name}}
+                </label>
+                </li>
+          </ul>
+        </div>
+        <br>
+
+        <div class="control">
+          <input class="input" type="text" placeholder="Data Nascimento" formControlName="datanascimento" maxlength="10"
+            onkeypress="mascaraData( this, event )">
+          <span class="tag is-danger"
+            *ngIf="!form.controls.datanascimento.valid && !form.controls.datanascimento.pristine">Data inválida</span>
+        </div>
+        <br>
+        <div class="buttons">
+          <button (click)="submit()" *ngIf="showCreate" [disabled]="!form.valid"
+            class="button is-success">Cadastrar</button>
+          <button (click)="update()" *ngIf="showUpdate" [disabled]="!form.valid" id="btnUpdate"
+            class="button is-success">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</section>

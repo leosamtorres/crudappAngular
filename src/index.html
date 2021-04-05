@@ -1,0 +1,46 @@
+<!doctype html>
+<html  lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>EntrevistaApp - BRQ</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" >
+
+  
+</head>
+<body>
+  <app-root>Loading...</app-root>
+</body>
+</html>
+
+<script type="text/javascript" >
+// radiobtn = document.getElementById("Masculino");
+//     radiobtn.checked = true;
+
+  function mascaraData( campo, e )
+  {
+    var kC = (document.all) ? event.keyCode : e.keyCode;
+    var data = campo.value;
+    
+    if( kC!=8 && kC!=46 )
+    {
+      if( data.length==2 )
+      {
+        campo.value = data += '/';
+      }
+      else if( data.length==5 )
+      {
+        campo.value = data += '/';
+      }
+      else
+        campo.value = data;
+    }
+  }
+
+  
+  </script>
